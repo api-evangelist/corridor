@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/corridor-openapi.yml
+docs: https://docs.corridor.dev/api/reference
+summary:
+  types:
+  - http
+  http_schemes:
+  - bearer
+  token_prefix: cor_
+  admin_operations: Require a standard user session; API tokens are rejected for admin operations.
+  sso: SSO via Okta available for enterprise accounts (docs.corridor.dev/administration/sso-okta).
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: >-
+    API token with the `cor_` prefix, generated from Profile > API Tokens in the
+    Corridor dashboard (https://app.corridor.dev/settings). Passed as
+    `Authorization: Bearer [example key]`. Tokens carry the same access as the user who
+    created them but cannot perform admin operations.
+  sources:
+  - openapi/corridor-openapi.yml
