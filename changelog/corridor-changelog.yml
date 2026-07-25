@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.corridor.dev/changelog
+scheme: dated
+cadence: continuous
+notes: Updates ship continuously; this page tracks notable features, improvements, and behavior changes.
+entries:
+  - date: '2026-05-21'
+    label: Corridor now integrates with Codex and Cursor Agents
+    additions:
+      - Codex CLI integration for real-time security guardrails
+      - Cursor Plugin adds real-time security reviews to Cursor agents
+      - PR Feedback / Developer Feedback page capturing developer replies to Corridor PR comments
+      - Corridor emoji-reacts to developer responses on PR review comments
+  - date: '2026-04-14'
+    label: Two new updates to Findings
+    additions:
+      - Auto-close on merge — Corridor reviews the merged diff and auto-closes findings the change remediates ("Fixed by PR #N" badge)
+      - Custom tags for findings (built-in Validated tag; route by team/service/sprint; team-wide default filter)
+  - date: '2026-03-17'
+    label: Corridor CLI and MCP server are live — plus new Hook integrations
+    additions:
+      - Standalone Corridor CLI (use Corridor without an extension; enables Claude Code standalone plugin)
+      - Corridor MCP Server — review findings, create guardrails from your IDE
+      - Factory Hooks support (via CLI) with MCP compliance enforcement
+      - Devin Desktop Hooks support
+  - date: '2025-12-22'
+    label: Cursor Hooks are live in Corridor
+    additions:
+      - MCP Compliance enforcement (enabled by default) — set policies for which MCP servers can run
+      - Stop Hooks (opt-in) — instant security checks that guide the coding agent to fix security bugs

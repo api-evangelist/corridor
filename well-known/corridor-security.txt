@@ -1,0 +1,10 @@
+# Corridor Security Inc. security contacts and policy
+
+# Our security contact channels
+Contact: mailto:contact@corridor.dev
+
+# Link to our vulnerability disclosure policy
+Policy: https://corridor.dev/security/
+
+# Languages that our team speaks and understands
+Preferred-Languages: en-US

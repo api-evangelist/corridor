@@ -1,0 +1,57 @@
+generated: '2026-07-18'
+method: searched
+status: published
+source: https://docs.corridor.dev/features/corridor-mcp
+server:
+  name: corridor
+  transport: http
+  url: https://app.corridor.dev/api/mcp
+  authentication:
+    type: bearer
+    description: >-
+      Corridor API token (cor_ prefix) supplied as an Authorization: Bearer
+      header. Generate a token at https://app.corridor.dev/settings.
+  requirements:
+    - Corridor extension installed and authenticated (for IDE use)
+    - MCP enabled for your team (team setting)
+    - IDE Extension Support entitlement on your plan
+    - User must be a member of a team that owns the project
+  security_notes:
+    - Tools validate team membership before granting access
+    - Uniform 404 responses prevent information leakage
+    - Admin operations reject API tokens (require user auth)
+  client_config_example: |
+    {
+      "mcpServers": {
+        "corridor": {
+          "transport": "http",
+          "url": "https://app.corridor.dev/api/mcp",
+          "headers": { "Authorization": "Bearer {generated_token}" }
+        }
+      }
+    }
+tools:
+  - name: analyzePlan
+    description: >-
+      Core tool AI coding assistants call before generating code. Takes a
+      description of a planned implementation and returns relevant security
+      context from the project's guardrails and context documents.
+    parameters: [plan, cwd, branch, commit_hash, has_unstaged_changes]
+  - name: getFindings
+    description: Retrieve security findings with filters for state (open/closed/potential), severity, and limit.
+    source_operation: openapi/corridor-openapi.yml#searchFindings
+  - name: getFinding
+    description: Get detailed info about a specific finding including description, affected code, and remediation guidance.
+    source_operation: openapi/corridor-openapi.yml#getFinding
+  - name: updateFindingState
+    description: Mark findings as closed (false positive, risk accepted, fixed) or reopen them.
+    source_operation: openapi/corridor-openapi.yml#updateFinding
+  - name: getGuardrails
+    description: Get security guardrails and context documents for a project.
+    source_operation: openapi/corridor-openapi.yml#listGuardrails
+  - name: createGuardrail
+    description: Create new security guardrails programmatically.
+    source_operation: openapi/corridor-openapi.yml#createGuardrail
+  - name: listProjects
+    description: List all Corridor projects you have access to.
+    source_operation: openapi/corridor-openapi.yml#listProjects

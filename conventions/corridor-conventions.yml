@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.corridor.dev/api/reference
+authentication:
+  style: bearer-token
+  header: 'Authorization: Bearer cor_...'
+  token_prefix: cor_
+  notes: >-
+    API tokens carry the same access as the creating user but cannot perform
+    admin operations, which require a standard user session. Tokens generated at
+    Profile > API Tokens (https://app.corridor.dev/settings).
+idempotency:
+  supported: false
+  notes: No idempotency-key header or mechanism is documented.
+pagination:
+  styles:
+    - style: page-envelope
+      applies_to: [listPrReviews]
+      request_params: [limit, offset, sortBy, sortOrder]
+      response_field: pagination
+      response_fields: [page, limit, total, totalPages, hasNext, hasPrev]
+    - style: limit-offset
+      applies_to: [listPrReviewFindings, getGuardrailInvocations]
+      request_params: [limit, offset]
+    - style: limit-capped
+      applies_to: [searchFindings]
+      request_params: [limit]
+      notes: default 10, max 50
+tenancy:
+  scoping: >-
+    Most read operations are scoped by teamId (query param) or by team/project
+    path segments; resources belong to a team and a project.
+error_envelope:
+  shape: '{ "error": string }'
+  branchable_status: >-
+    The by-pr PR-review lookup returns a "status" field (in_progress,
+    repo_not_found, pr_review_not_found) for non-success outcomes.
+  cross_reference: errors/corridor-problem-types.yml
+rate_limiting:
+  signal: HTTP 429 on limit exceeded; retry after waiting.
+  documented_headers: none
+  cross_reference: null
+versioning:
+  cross_reference: lifecycle/corridor-lifecycle.yml
+authentication_cross_reference: authentication/corridor-authentication.yml

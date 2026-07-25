@@ -1,0 +1,24 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Corridor API
+  version: 1.0.0
+extends: openapi/corridor-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-rating: 4
+      x-apievangelist-provenance:
+        method: generated
+        source: https://docs.corridor.dev/api/reference
+        note: >-
+          Spec faithfully generated from Corridor's published API reference; the
+          provider's own openapi.json endpoint currently serves the Mintlify
+          "Plant Store" template, not a real Corridor spec.
+  - target: $.info
+    update:
+      x-mcp-server: mcp/corridor-mcp.yml
+      x-agent-skills: skills/_index.yml
+  - target: $.components.securitySchemes.bearerAuth
+    update:
+      x-token-prefix: cor_
+      x-token-generation: https://app.corridor.dev/settings

@@ -1,0 +1,17 @@
+generated: '2026-07-18'
+method: searched
+probe: false
+url: https://trust.corridor.dev
+title: Corridor Trust Center
+certifications: []
+notes: >-
+  Corridor publishes a dedicated Trust Center at trust.corridor.dev (linked from
+  the site footer). The page is a client-rendered app; specific named
+  certifications could not be verified from the static HTML and are intentionally
+  left empty rather than asserted. Enterprise plans document a zero-data-retention
+  mode and single-tenant deployment options.
+evidence:
+  - source: https://trust.corridor.dev
+    keywords: [trust center]
+  - source: https://www.corridor.dev footer
+    keywords: [trust center link]

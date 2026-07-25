@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.corridor.dev/api/reference
+versioning:
+  scheme: unversioned
+  current: null
+  notes: >-
+    The REST API is served under a single /api base with no version segment;
+    updates ship continuously and are tracked in the changelog. The published
+    OpenAPI info.version is 1.0.
+status_page: https://status.corridor.dev
+changelog: https://docs.corridor.dev/changelog
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support is documented.
+data_retention:
+  paid: Data is retained for 30 days after subscription expiration, then permanently deleted.
+  enterprise: Zero data retention mode available (Corridor does not store code).
+deprecated_operations: []

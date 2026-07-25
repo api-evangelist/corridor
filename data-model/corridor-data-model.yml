@@ -1,0 +1,58 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/corridor-openapi.yml
+entities:
+  - name: Team
+    description: Top-level tenant; users belong to teams and resources are scoped by team.
+    key_fields: [id, name]
+  - name: Project
+    description: A connected GitHub/GitLab repository brought under Corridor monitoring.
+    key_fields: [id, name]
+  - name: Finding
+    description: A security vulnerability discovered in code.
+    key_fields: [id, title, affectedFile, cwe, severity, state, projectId, projectName, createdAt]
+  - name: Guardrail
+    description: A per-project security rule (a "report") enforced during reviews and real-time analysis; type guardrail or context.
+    key_fields: [id, name, guardrail, type, createdAt]
+  - name: GuardrailPack
+    description: A curated collection (pack) of guardrails attached to a project.
+  - name: PrReview
+    description: A pull request security review with findings, comments, and publish status.
+    key_fields: [id, github_pr_id, publish_status, event, createdAt]
+  - name: User
+    description: A team member (admin, member, or ideUser role).
+relationships:
+  - from: Project
+    to: Team
+    type: belongs_to
+    via: teamId
+  - from: Finding
+    to: Project
+    type: belongs_to
+    via: projectId
+  - from: Guardrail
+    to: Project
+    type: belongs_to
+    via: project (reports)
+  - from: GuardrailPack
+    to: Project
+    type: belongs_to
+    via: project (packs)
+  - from: PrReview
+    to: Team
+    type: belongs_to
+    via: team
+  - from: PrReview
+    to: Finding
+    type: has_many
+    via: findings
+  - from: PrReview
+    to: Project
+    type: belongs_to
+    via: task.project
+  - from: User
+    to: Team
+    type: belongs_to
+    via: membership/role
+id_conventions:
+  api_token_prefix: cor_

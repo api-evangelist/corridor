@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/corridor-openapi.yml
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: API uses bearer API tokens (cor_ prefix), not OAuth2 authorization flows.
+  - id: http-bearer
+    conforms: true
+    evidence: securityScheme type http scheme bearer applied globally.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: 'Errors use a simple {"error": string} envelope, not application/problem+json.'
+  - id: rest
+    conforms: true
+    evidence: Resource-oriented JSON REST over HTTPS with standard status codes.
+  - id: mcp
+    conforms: true
+    evidence: Official hosted MCP server at https://app.corridor.dev/api/mcp (Model Context Protocol, http transport).
+  - id: sso-saml-okta
+    conforms: true
+    evidence: SSO via Okta documented for enterprise accounts (docs.corridor.dev/administration/sso-okta).
+  - id: cwe
+    conforms: true
+    evidence: Findings are classified with CWE identifiers (e.g. CWE-89 SQL Injection).

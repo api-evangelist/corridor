@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.corridor.dev/getting-started/quickstart
+name: Corridor CLI
+description: >-
+  Standalone Corridor CLI that lets you use Corridor without an editor
+  extension. The installer automatically sets up the Corridor plugin, MCP
+  server, hooks, and (for supported agents) agent rules, detecting the local
+  coding-agent binary (e.g. codex).
+first_released: '2026-03-17'
+install:
+  - platform: macos-linux
+    method: shell
+    command: curl -fsSL https://app.corridor.dev/cli/install.sh | bash
+  - platform: windows
+    method: powershell
+    command: irm https://app.corridor.dev/cli/install.ps1 | iex
+sets_up:
+  - Corridor plugin
+  - MCP server (https://app.corridor.dev/api/mcp)
+  - Deterministic security hooks (pre-commit / stop hooks)
+  - Agent rules (for Factory and Codex)
+supported_agents:
+  - Claude Code (standalone plugin via CLI)
+  - Factory (AI Droid agents; hooks + MCP compliance)
+  - Codex CLI (hooks on macOS; agent rules)
+  - Devin Desktop
+notes: >-
+  The CLI binary is distributed via the install scripts above rather than a
+  public package registry, so it is catalogued here rather than in packages/.

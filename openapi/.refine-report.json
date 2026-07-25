@@ -1,0 +1,24 @@
+{
+  "provider": "corridor",
+  "sources": [
+    "corridor-dashboard-api-openapi.yml",
+    "corridor-findings-api-openapi.yml",
+    "corridor-guardrails-api-openapi.yml",
+    "corridor-pr-reviews-api-openapi.yml",
+    "corridor-projects-api-openapi.yml",
+    "corridor-teams-api-openapi.yml"
+  ],
+  "outputs": [
+    "corridor-dashboard-api-openapi.yml",
+    "corridor-findings-api-openapi.yml",
+    "corridor-guardrails-api-openapi.yml",
+    "corridor-pr-reviews-api-openapi.yml",
+    "corridor-projects-api-openapi.yml",
+    "corridor-teams-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

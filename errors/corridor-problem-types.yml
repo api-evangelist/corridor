@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: derived
+source: https://docs.corridor.dev/api/reference
+format: custom-error-envelope
+envelope:
+  description: Error responses include a JSON body with a single "error" string.
+  example: '{ "error": "Description of what went wrong" }'
+notes: >-
+  Corridor uses a simple {"error": string} envelope rather than RFC 9457
+  problem+json. The by-pr PR-review lookup additionally returns a machine-
+  readable "status" field on non-success outcomes (in_progress, repo_not_found,
+  pr_review_not_found) so callers can branch without parsing error strings.
+problems:
+  - status: 400
+    title: Bad request
+    detail: Check your parameters.
+  - status: 401
+    title: Unauthorized
+    detail: Invalid or missing token.
+  - status: 403
+    title: Forbidden
+    detail: Insufficient permissions (e.g. admin operations attempted with an API token).
+  - status: 404
+    title: Not found
+    detail: Resource not found. MCP tools return uniform 404s to prevent information leakage.
+    status_values: [repo_not_found, pr_review_not_found]
+  - status: 429
+    title: Too Many Requests
+    detail: API token is rate limited; wait before retrying.
+  - status: 500
+    title: Server error
+    detail: Unexpected server error.

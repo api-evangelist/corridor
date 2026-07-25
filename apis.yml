@@ -1,25 +1,246 @@
 aid: corridor
 name: Corridor
-description: Corridor is a company surfaced as a portfolio company of felicis and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Corridor is a security company building the security layer for AI coding.
+  Founded by Jack Cable (former CISA) and backed by Felicis, Corridor secures
+  AI-generated code at the source: it plugs into AI coding assistants and IDEs
+  (Claude Code, Cursor, VS Code, Codex, Devin, Factory) to deliver real-time
+  security guardrails as code is generated, automated security PR reviews on
+  GitHub and GitLab, pre-commit scanning, findings management, and MCP
+  compliance enforcement. Corridor exposes a REST API and an official hosted
+  Model Context Protocol (MCP) server so agents and CI/CD pipelines can query
+  findings, manage guardrails, look up PR reviews, and read dashboard data.
 url: https://raw.githubusercontent.com/api-evangelist/corridor/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - felicis
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-provider-surface
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.corridor.dev/icon.svg
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Security
+- Application Security
+- AI Coding
+- Code Security
+- Developer Tools
+- Guardrails
+- MCP
+- Static Analysis
+- DevSecOps
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: corridor:corridor-dashboard-api
+  name: Corridor Dashboard API
+  description: Access dashboard metrics and AI usage data.
+  humanURL: https://docs.corridor.dev/api/reference
+  baseURL: https://app.corridor.dev/api
+  tags:
+  - Dashboard
+  properties:
+  - type: OpenAPI
+    url: openapi/corridor-dashboard-api-openapi.yml
+  - type: Authentication
+    url: authentication/corridor-authentication.yml
+  - type: ErrorCatalog
+    url: errors/corridor-problem-types.yml
+  - type: Conventions
+    url: conventions/corridor-conventions.yml
+  - type: DataModel
+    url: data-model/corridor-data-model.yml
+  - type: Conformance
+    url: conformance/corridor-conformance.yml
+  - type: AgenticAccess
+    url: agentic-access/corridor-agentic-access.yml
+- aid: corridor:corridor-findings-api
+  name: Corridor Findings API
+  description: Retrieve and manage security findings across projects.
+  humanURL: https://docs.corridor.dev/api/reference
+  baseURL: https://app.corridor.dev/api
+  tags:
+  - Findings
+  properties:
+  - type: OpenAPI
+    url: openapi/corridor-findings-api-openapi.yml
+  - type: Authentication
+    url: authentication/corridor-authentication.yml
+  - type: ErrorCatalog
+    url: errors/corridor-problem-types.yml
+  - type: Conventions
+    url: conventions/corridor-conventions.yml
+  - type: DataModel
+    url: data-model/corridor-data-model.yml
+  - type: Conformance
+    url: conformance/corridor-conformance.yml
+  - type: AgenticAccess
+    url: agentic-access/corridor-agentic-access.yml
+- aid: corridor:corridor-guardrails-api
+  name: Corridor Guardrails API
+  description: Manage per-project security guardrails (reports) and packs.
+  humanURL: https://docs.corridor.dev/api/reference
+  baseURL: https://app.corridor.dev/api
+  tags:
+  - Guardrails
+  properties:
+  - type: OpenAPI
+    url: openapi/corridor-guardrails-api-openapi.yml
+  - type: Authentication
+    url: authentication/corridor-authentication.yml
+  - type: ErrorCatalog
+    url: errors/corridor-problem-types.yml
+  - type: Conventions
+    url: conventions/corridor-conventions.yml
+  - type: DataModel
+    url: data-model/corridor-data-model.yml
+  - type: Conformance
+    url: conformance/corridor-conformance.yml
+  - type: AgenticAccess
+    url: agentic-access/corridor-agentic-access.yml
+- aid: corridor:corridor-pr-reviews-api
+  name: Corridor PR Reviews API
+  description: Access pull request review results and AI analysis.
+  humanURL: https://docs.corridor.dev/api/reference
+  baseURL: https://app.corridor.dev/api
+  tags:
+  - PR Reviews
+  properties:
+  - type: OpenAPI
+    url: openapi/corridor-pr-reviews-api-openapi.yml
+  - type: Authentication
+    url: authentication/corridor-authentication.yml
+  - type: ErrorCatalog
+    url: errors/corridor-problem-types.yml
+  - type: Conventions
+    url: conventions/corridor-conventions.yml
+  - type: DataModel
+    url: data-model/corridor-data-model.yml
+  - type: Conformance
+    url: conformance/corridor-conformance.yml
+  - type: AgenticAccess
+    url: agentic-access/corridor-agentic-access.yml
+- aid: corridor:corridor-projects-api
+  name: Corridor Projects API
+  description: List and inspect projects (connected repositories).
+  humanURL: https://docs.corridor.dev/api/reference
+  baseURL: https://app.corridor.dev/api
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/corridor-projects-api-openapi.yml
+  - type: Authentication
+    url: authentication/corridor-authentication.yml
+  - type: ErrorCatalog
+    url: errors/corridor-problem-types.yml
+  - type: Conventions
+    url: conventions/corridor-conventions.yml
+  - type: DataModel
+    url: data-model/corridor-data-model.yml
+  - type: Conformance
+    url: conformance/corridor-conformance.yml
+  - type: AgenticAccess
+    url: agentic-access/corridor-agentic-access.yml
+- aid: corridor:corridor-teams-api
+  name: Corridor Teams API
+  description: Manage team configuration, members, and permissions.
+  humanURL: https://docs.corridor.dev/api/reference
+  baseURL: https://app.corridor.dev/api
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/corridor-teams-api-openapi.yml
+  - type: Authentication
+    url: authentication/corridor-authentication.yml
+  - type: ErrorCatalog
+    url: errors/corridor-problem-types.yml
+  - type: Conventions
+    url: conventions/corridor-conventions.yml
+  - type: DataModel
+    url: data-model/corridor-data-model.yml
+  - type: Conformance
+    url: conformance/corridor-conformance.yml
+  - type: AgenticAccess
+    url: agentic-access/corridor-agentic-access.yml
 common:
 - type: Website
   url: https://corridor.dev
+- type: DeveloperPortal
+  url: https://docs.corridor.dev
+- type: Documentation
+  url: https://docs.corridor.dev
+- type: APIReference
+  url: https://docs.corridor.dev/api/reference
+- type: GettingStarted
+  url: https://docs.corridor.dev/getting-started/quickstart
+- type: Blog
+  url: https://corridor.dev/blog
+- type: Pricing
+  url: https://corridor.dev/pricing
+- type: SignUp
+  url: https://app.corridor.dev
+- type: TermsOfService
+  url: https://corridor.dev/terms
+- type: PrivacyPolicy
+  url: https://corridor.dev/privacy
+- type: Support
+  url: mailto:support@corridor.dev
+- type: StatusPage
+  url: https://status.corridor.dev
+- type: ChangeLog
+  url: https://docs.corridor.dev/changelog
+- type: MCPServer
+  url: mcp/corridor-mcp.yml
+- type: CLI
+  url: cli/corridor-cli.yml
+- type: LLMsTxt
+  url: llms/corridor-llms.txt
+- type: WellKnown
+  url: well-known/corridor-well-known.yml
+- type: SecurityTxt
+  url: well-known/corridor-security.txt
+- type: Lifecycle
+  url: lifecycle/corridor-lifecycle.yml
+- type: TrustCenter
+  url: https://trust.corridor.dev
+- type: Security
+  url: https://corridor.dev/security
+- type: VulnerabilityDisclosure
+  url: security/corridor-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/corridor-domain-security.yml
+- type: Authentication
+  url: authentication/corridor-authentication.yml
+- type: ChangeLog
+  url: changelog/corridor-changelog.yml
+- type: AgentSkill
+  url: skills/corridor-triage-findings.md
+- type: AgentSkill
+  url: skills/corridor-manage-guardrails.md
+- type: AgentSkill
+  url: skills/corridor-pr-review-lookup.md
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

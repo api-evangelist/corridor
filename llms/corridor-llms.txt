@@ -1,0 +1,41 @@
+# Corridor
+
+## Docs
+
+- [Billing & Tiers](https://docs.corridor.dev/administration/billing.md): Manage your Corridor subscription, pricing tiers, and payment methods.
+- [MDM Support Guide](https://docs.corridor.dev/administration/mdm-support.md): Provision Corridor across your organization using Mobile Device Management tools.
+- [SSO & Okta](https://docs.corridor.dev/administration/sso-okta.md): Set up single sign-on with Okta for your Corridor enterprise account.
+- [IP Whitelisting](https://docs.corridor.dev/administration/whitelist.md): Corridor static IP addresses for firewall and network allowlist configuration.
+- [API Reference](https://docs.corridor.dev/api/reference.md): Programmatic access to Corridor findings, guardrails, PR reviews, team settings, and dashboard data.
+- [Changelog](https://docs.corridor.dev/changelog.md): Product updates, improvements, and new features from the Corridor team.
+- [Cursor](https://docs.corridor.dev/cloud-agents/cursor.md): Set up Corridor with Cursor Cloud Agents to scan code for security vulnerabilities before every commit.
+- [Blocking PRs](https://docs.corridor.dev/features/blocking-prs.md): Turn Corridor's PR security review into a required status check so pull requests with unresolved findings can't be merged until they're addressed.
+- [Chats](https://docs.corridor.dev/features/chats.md): Investigate your codebase and get deeper analysis on your findings.
+- [Corridor MCP](https://docs.corridor.dev/features/corridor-mcp.md): Corridor's MCP server tools enable AI coding assistants to interact with your security data.
+- [Dashboard](https://docs.corridor.dev/features/dashboard.md): Track security metrics, PR review effectiveness, and remediation progress.
+- [Findings](https://docs.corridor.dev/features/findings.md): Track, prioritize, and remediate security vulnerabilities discovered in your code.
+- [Guardrails](https://docs.corridor.dev/features/guardrails.md): Real-time security analysis during AI code generation prevents vulnerabilities before they're written.
+- [MCP Compliance](https://docs.corridor.dev/features/mcp-compliance.md): Control which AI tools and MCP servers your team can use for secure AI-assisted development.
+- [PR Reviews](https://docs.corridor.dev/features/pr-reviews.md): Automated security reviews on every GitHub pull request with actionable findings and low false positive rates.
+- [Pre-Commit Scanning](https://docs.corridor.dev/features/pre-commit-scanning.md): Scan code for security vulnerabilities before every commit so issues are caught before they reach a pull request.
+- [Core Concepts](https://docs.corridor.dev/getting-started/concepts.md): Understand how Corridor works and the key concepts used throughout the platform.
+- [Quickstart](https://docs.corridor.dev/getting-started/quickstart.md): Get up and running with Corridor in under 5 minutes.
+- [Claude Code](https://docs.corridor.dev/ide-setup/claude-code.md): Integrate Corridor with Claude Code for real-time security guardrails via MCP and hooks.
+- [Codex](https://docs.corridor.dev/ide-setup/codex.md): Integrate Corridor with Codex CLI for real-time security guardrails via MCP and hooks.
+- [Cursor](https://docs.corridor.dev/ide-setup/cursor.md): Install Corridor in Cursor via the Cursor Marketplace Plugin, the Corridor extension, or both.
+- [Custom MCP](https://docs.corridor.dev/ide-setup/custom-mcp-servers.md): Set up Corridor as an MCP server for any AI coding tool that supports the Model Context Protocol.
+- [Devin](https://docs.corridor.dev/ide-setup/devin.md): Integrate Corridor with Cognition's Devin AI coding assistant for real-time security guardrails.
+- [Devin Desktop](https://docs.corridor.dev/ide-setup/devin-desktop.md): Integrate Corridor with Devin Desktop for real-time security guardrails via MCP and hooks.
+- [Factory](https://docs.corridor.dev/ide-setup/factory.md): Integrate Corridor with Factory's AI Droid agents for secure automated development.
+- [VS Code](https://docs.corridor.dev/ide-setup/vscode.md): Install the Corridor extension for real-time security guardrails in VS Code.
+- [Welcome](https://docs.corridor.dev/index.md): Secure AI Coding at the Source. Corridor accelerates AI coding by preventing security flaws before they're even written.
+- [GitHub](https://docs.corridor.dev/integrations/github.md): Connect GitHub repositories for automated PR reviews and security status checks.
+- [GitLab](https://docs.corridor.dev/integrations/gitlab.md): Connect GitLab repositories for automated merge request reviews and security scanning.
+- [Adding Projects](https://docs.corridor.dev/onboarding/adding-projects.md): Import repositories as Corridor projects for security monitoring.
+- [Inviting Teammates](https://docs.corridor.dev/onboarding/adding-team-members.md): Invite team members and manage roles in Corridor.
+- [Configuring Guardrails](https://docs.corridor.dev/onboarding/configuring-guardrails.md): Enable and configure security guardrails for your team.
+- [Connecting GitHub](https://docs.corridor.dev/onboarding/connecting-github.md): Connect your GitHub account and repositories to Corridor.
+
+## OpenAPI Specs
+
+- [openapi](https://docs.corridor.dev/api-reference/openapi.json)

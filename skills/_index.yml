@@ -1,0 +1,16 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/corridor-openapi.yml
+skills:
+- file: corridor-triage-findings.md
+  name: Triage Corridor security findings
+  api: openapi/corridor-openapi.yml
+  operations: [searchFindings, getFinding, updateFinding]
+- file: corridor-manage-guardrails.md
+  name: Manage Corridor project guardrails
+  api: openapi/corridor-openapi.yml
+  operations: [listGuardrails, createGuardrail, generateGuardrail]
+- file: corridor-pr-review-lookup.md
+  name: Look up Corridor PR security reviews
+  api: openapi/corridor-openapi.yml
+  operations: [getPrReviewByNumber, getPrReview, listPrReviewFindings]
