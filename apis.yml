@@ -183,6 +183,8 @@ apis:
   - type: AgenticAccess
     url: agentic-access/corridor-agentic-access.yml
 common:
+- type: Overlay
+  url: overlays/corridor-openapi-overlay.yaml
 - type: Website
   url: https://corridor.dev
 - type: DeveloperPortal
