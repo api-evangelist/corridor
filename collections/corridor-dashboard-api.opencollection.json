@@ -1,0 +1,141 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Corridor Dashboard API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Dashboard",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get dashboard data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/teams/:id/dashboard-data",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Returns aggregated security metrics including findings by severity, trends over time, and top projects."
+        },
+        {
+          "info": {
+            "name": "List LLM requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/teams/:id/list-requests",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Returns a summary of AI/LLM requests made across the team, useful for tracking AI usage and compliance."
+        },
+        {
+          "info": {
+            "name": "Get guardrail invocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/teams/:id/guardrail-invocations-staging",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Team ID."
+              },
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "query",
+                "description": "Guardrail report ID."
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns data on which guardrails were triggered during real-time code analysis (hook events and security checks)."
+        },
+        {
+          "info": {
+            "name": "Get stop hook invocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/teams/:id/stop-hook-invocations",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Returns instances where Corridor's hooks blocked an action (e.g., prevented an insecure code pattern from being applied)."
+        },
+        {
+          "info": {
+            "name": "Log extension data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.corridor.dev/api/log",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "The primary endpoint used by IDE extensions to send code analysis data to Corridor. The `type` field determines processing (`hook-event`, `async-security-check`, `fetch-security-results`, `mcp-detection`, `compliance-data`)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

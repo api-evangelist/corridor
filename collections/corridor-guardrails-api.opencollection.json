@@ -1,0 +1,162 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Corridor Dashboard Guardrails API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guardrails",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List guardrails for a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/projects/:id/reports",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID."
+              }
+            ]
+          },
+          "docs": "Returns all guardrails (reports) and rulesets attached to a project."
+        },
+        {
+          "info": {
+            "name": "Create a guardrail",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.corridor.dev/api/projects/:id/reports",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a guardrail"
+        },
+        {
+          "info": {
+            "name": "Generate a guardrail with AI",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.corridor.dev/api/projects/:id/guardrails/generate",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a taskId you can use to track generation progress."
+        },
+        {
+          "info": {
+            "name": "Update a guardrail",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.corridor.dev/api/projects/:id/reports/:reportId",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID."
+              },
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Guardrail report ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a guardrail"
+        },
+        {
+          "info": {
+            "name": "Delete a guardrail",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.corridor.dev/api/projects/:id/reports/:reportId",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID."
+              },
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Guardrail report ID."
+              }
+            ]
+          },
+          "docs": "Delete a guardrail"
+        },
+        {
+          "info": {
+            "name": "List guardrail packs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/projects/:id/packs",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID."
+              }
+            ]
+          },
+          "docs": "Returns the security packs (curated guardrail collections) attached to a project."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

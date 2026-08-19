@@ -1,0 +1,128 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Corridor Dashboard Findings API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Findings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search findings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/findings/search",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "query",
+                "description": "Team ID to search within."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search term (matches title"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "createdAfter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "createdBefore",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Max results (default 10"
+              }
+            ]
+          },
+          "docs": "Search findings"
+        },
+        {
+          "info": {
+            "name": "Get finding",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/findings/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the full finding with related project, rule, scan, and PR review data."
+        },
+        {
+          "info": {
+            "name": "Update finding",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.corridor.dev/api/findings/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "All fields are optional; include only the fields you want to update."
+        },
+        {
+          "info": {
+            "name": "Delete finding",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.corridor.dev/api/findings/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete finding"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

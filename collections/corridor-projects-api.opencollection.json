@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Corridor Dashboard Projects API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/projects",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "query",
+                "description": "Team ID to list projects for."
+              }
+            ]
+          },
+          "docs": "List projects"
+        },
+        {
+          "info": {
+            "name": "Get project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/projects/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID."
+              }
+            ]
+          },
+          "docs": "Get project"
+        },
+        {
+          "info": {
+            "name": "Get project findings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/projects/:id/findings",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID."
+              }
+            ]
+          },
+          "docs": "Returns all findings for a specific project."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

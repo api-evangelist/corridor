@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Corridor Dashboard Teams API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Teams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/teams"
+          },
+          "docs": "Returns all teams the authenticated user belongs to."
+        },
+        {
+          "info": {
+            "name": "Get team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/teams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Get team"
+        },
+        {
+          "info": {
+            "name": "Get team permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.corridor.dev/api/teams/:id/permissions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Returns the current user's role and permissions for the team."
+        },
+        {
+          "info": {
+            "name": "Invite a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.corridor.dev/api/teams/:id/invite",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Team ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Invite a user"
+        },
+        {
+          "info": {
+            "name": "Remove a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.corridor.dev/api/teams/:teamId/users/:userId",
+            "params": [
+              {
+                "name": "teamId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove a user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
