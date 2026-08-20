@@ -144,6 +144,8 @@ apis:
   humanURL: https://docs.corridor.dev/api/reference
   baseURL: https://app.corridor.dev/api
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -166,6 +168,8 @@ apis:
   humanURL: https://docs.corridor.dev/api/reference
   baseURL: https://app.corridor.dev/api
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
