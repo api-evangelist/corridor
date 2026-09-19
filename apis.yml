@@ -69,6 +69,8 @@ apis:
   humanURL: https://docs.corridor.dev/api/reference
   baseURL: https://app.corridor.dev/api
   tags:
+  - Dashboards
+  tags_raw:
   - Dashboard
   properties:
   - type: OpenAPI
