@@ -202,26 +202,31 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    BadRequest:
-      description: Bad request — check your parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized — invalid or missing token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Description of what went wrong.
+      required:
+      - error
+    GuardrailCreate:
+      type: object
+      required:
+      - name
+      - guardrail
+      properties:
+        name:
+          type: string
+        guardrail:
+          type: string
+        type:
+          type: string
+          enum:
+          - guardrail
+          - context
+          default: guardrail
     Guardrail:
       type: object
       properties:
@@ -241,30 +246,25 @@ components:
         createdAt:
           type: string
           format: date-time
-    GuardrailCreate:
-      type: object
-      required:
-      - name
-      - guardrail
-      properties:
-        name:
-          type: string
-        guardrail:
-          type: string
-        type:
-          type: string
-          enum:
-          - guardrail
-          - context
-          default: guardrail
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Description of what went wrong.
-      required:
-      - error
+  responses:
+    BadRequest:
+      description: Bad request — check your parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized — invalid or missing token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     bearerAuth:
       type: http

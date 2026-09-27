@@ -148,6 +148,14 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Description of what went wrong.
+      required:
+      - error
     Finding:
       type: object
       properties:
@@ -213,23 +221,15 @@ components:
           type: string
         affectedFile:
           type: string
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Description of what went wrong.
-      required:
-      - error
   responses:
-    RateLimited:
-      description: Too many requests — the API token is rate limited; wait before retrying.
     BadRequest:
       description: Bad request — check your parameters.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Too many requests — the API token is rate limited; wait before retrying.
     NotFound:
       description: Not found.
       content:
