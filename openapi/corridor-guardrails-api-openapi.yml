@@ -202,6 +202,25 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    Unauthorized:
+      description: Unauthorized — invalid or missing token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request — check your parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     Error:
       type: object
@@ -211,22 +230,6 @@ components:
           description: Description of what went wrong.
       required:
       - error
-    GuardrailCreate:
-      type: object
-      required:
-      - name
-      - guardrail
-      properties:
-        name:
-          type: string
-        guardrail:
-          type: string
-        type:
-          type: string
-          enum:
-          - guardrail
-          - context
-          default: guardrail
     Guardrail:
       type: object
       properties:
@@ -246,25 +249,22 @@ components:
         createdAt:
           type: string
           format: date-time
-  responses:
-    BadRequest:
-      description: Bad request — check your parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized — invalid or missing token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    GuardrailCreate:
+      type: object
+      required:
+      - name
+      - guardrail
+      properties:
+        name:
+          type: string
+        guardrail:
+          type: string
+        type:
+          type: string
+          enum:
+          - guardrail
+          - context
+          default: guardrail
   securitySchemes:
     bearerAuth:
       type: http

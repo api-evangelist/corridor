@@ -147,6 +147,27 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    RateLimited:
+      description: Too many requests — the API token is rate limited; wait before retrying.
+    Unauthorized:
+      description: Unauthorized — invalid or missing token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request — check your parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     Error:
       type: object
@@ -156,6 +177,38 @@ components:
           description: Description of what went wrong.
       required:
       - error
+    FindingUpdate:
+      type: object
+      properties:
+        state:
+          type: string
+          enum:
+          - open
+          - closed
+        closedReason:
+          type: string
+        closedReasonCategory:
+          type: string
+          enum:
+          - false_positive
+          - risk_accepted
+          - vulnerability_fixed
+          - other
+        severity:
+          type: string
+          enum:
+          - critical
+          - high
+          - medium
+          - low
+        title:
+          type: string
+        description:
+          type: string
+        cwe:
+          type: string
+        affectedFile:
+          type: string
     Finding:
       type: object
       properties:
@@ -189,59 +242,6 @@ components:
           type: string
         projectName:
           type: string
-    FindingUpdate:
-      type: object
-      properties:
-        state:
-          type: string
-          enum:
-          - open
-          - closed
-        closedReason:
-          type: string
-        closedReasonCategory:
-          type: string
-          enum:
-          - false_positive
-          - risk_accepted
-          - vulnerability_fixed
-          - other
-        severity:
-          type: string
-          enum:
-          - critical
-          - high
-          - medium
-          - low
-        title:
-          type: string
-        description:
-          type: string
-        cwe:
-          type: string
-        affectedFile:
-          type: string
-  responses:
-    BadRequest:
-      description: Bad request — check your parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    RateLimited:
-      description: Too many requests — the API token is rate limited; wait before retrying.
-    NotFound:
-      description: Not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized — invalid or missing token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     bearerAuth:
       type: http
