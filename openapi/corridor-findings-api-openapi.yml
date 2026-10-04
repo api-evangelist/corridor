@@ -148,16 +148,14 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    RateLimited:
-      description: Too many requests — the API token is rate limited; wait before retrying.
-    Unauthorized:
-      description: Unauthorized — invalid or missing token.
+    BadRequest:
+      description: Bad request — check your parameters.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad request — check your parameters.
+    Unauthorized:
+      description: Unauthorized — invalid or missing token.
       content:
         application/json:
           schema:
@@ -168,6 +166,8 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Too many requests — the API token is rate limited; wait before retrying.
   schemas:
     Error:
       type: object

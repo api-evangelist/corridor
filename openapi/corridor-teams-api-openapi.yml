@@ -148,6 +148,12 @@ paths:
           $ref: '#/components/responses/Forbidden'
 components:
   responses:
+    BadRequest:
+      description: Bad request — check your parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     Forbidden:
       description: Forbidden — insufficient permissions.
       content:
@@ -156,12 +162,6 @@ components:
             $ref: '#/components/schemas/Error'
     Unauthorized:
       description: Unauthorized — invalid or missing token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad request — check your parameters.
       content:
         application/json:
           schema:
