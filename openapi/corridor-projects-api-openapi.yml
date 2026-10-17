@@ -96,15 +96,20 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    Unauthorized:
+      description: Unauthorized — invalid or missing token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Description of what went wrong.
-      required:
-      - error
     Project:
       type: object
       properties:
@@ -145,19 +150,14 @@ components:
           type: string
         projectName:
           type: string
-  responses:
-    Unauthorized:
-      description: Unauthorized — invalid or missing token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Description of what went wrong.
+      required:
+      - error
   securitySchemes:
     bearerAuth:
       type: http

@@ -148,14 +148,16 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    BadRequest:
-      description: Bad request — check your parameters.
+    RateLimited:
+      description: Too many requests — the API token is rate limited; wait before retrying.
+    Unauthorized:
+      description: Unauthorized — invalid or missing token.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized — invalid or missing token.
+    BadRequest:
+      description: Bad request — check your parameters.
       content:
         application/json:
           schema:
@@ -166,9 +168,40 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    RateLimited:
-      description: Too many requests — the API token is rate limited; wait before retrying.
   schemas:
+    Finding:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        affectedFile:
+          type: string
+        cwe:
+          type: string
+          description: CWE identifier
+          e.g. CWE-89: null
+        severity:
+          type: string
+          enum:
+          - critical
+          - high
+          - medium
+          - low
+        state:
+          type: string
+          enum:
+          - open
+          - closed
+          - potential
+        createdAt:
+          type: string
+          format: date-time
+        projectId:
+          type: string
+        projectName:
+          type: string
     Error:
       type: object
       properties:
@@ -208,39 +241,6 @@ components:
         cwe:
           type: string
         affectedFile:
-          type: string
-    Finding:
-      type: object
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        affectedFile:
-          type: string
-        cwe:
-          type: string
-          description: CWE identifier
-          e.g. CWE-89: null
-        severity:
-          type: string
-          enum:
-          - critical
-          - high
-          - medium
-          - low
-        state:
-          type: string
-          enum:
-          - open
-          - closed
-          - potential
-        createdAt:
-          type: string
-          format: date-time
-        projectId:
-          type: string
-        projectName:
           type: string
   securitySchemes:
     bearerAuth:

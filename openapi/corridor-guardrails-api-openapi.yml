@@ -203,14 +203,14 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    BadRequest:
-      description: Bad request — check your parameters.
+    Unauthorized:
+      description: Unauthorized — invalid or missing token.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized — invalid or missing token.
+    BadRequest:
+      description: Bad request — check your parameters.
       content:
         application/json:
           schema:
@@ -222,6 +222,25 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   schemas:
+    Guardrail:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        guardrail:
+          type: string
+          description: The guardrail rule text.
+        type:
+          type: string
+          enum:
+          - guardrail
+          - context
+          default: guardrail
+        createdAt:
+          type: string
+          format: date-time
     Error:
       type: object
       properties:
@@ -246,25 +265,6 @@ components:
           - guardrail
           - context
           default: guardrail
-    Guardrail:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        guardrail:
-          type: string
-          description: The guardrail rule text.
-        type:
-          type: string
-          enum:
-          - guardrail
-          - context
-          default: guardrail
-        createdAt:
-          type: string
-          format: date-time
   securitySchemes:
     bearerAuth:
       type: http
