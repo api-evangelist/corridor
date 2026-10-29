@@ -64,6 +64,133 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Corridor is a company surfaced as a portfolio company of felicis and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Corridor is a security company building the security layer for AI coding. Founded by Jack Cable (former CISA) and backed by Felicis, Corridor secures AI-generated code at the source: it plugs into AI coding assistants and IDEs (Claude Code, Cursor, VS Code, Codex, Devin, Factory) to deliver real-time security guardrails as code is generated, automated security PR reviews on GitHub and GitLab, pre-commit scanning, findings management, and MCP compliance enforcement. Corridor exposes a REST API and an official hosted Model Context Protocol (MCP) server so agents and CI/CD pipelines can query findings, manage guardrails, look up PR reviews, and read dashboard data.
 
-Backed by: felicis — https://corridor.dev
+**Areas:** Company · Security · Application Security · AI Coding · Code Security · Developer Tools · Guardrails · MCP · Static Analysis · DevSecOps
+
+## Corridor on APIs.io
+
+Everything profiled for Corridor is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/corridor/](https://apis.io/providers/corridor/)** — or go straight to one of the APIs or properties below.
+
+### APIs (6)
+
+- [Corridor Dashboard API](https://apis.io/apis/corridor/corridor-dashboard-api/) — Access dashboard metrics and AI usage data.
+- [Corridor Findings API](https://apis.io/apis/corridor/corridor-findings-api/) — Retrieve and manage security findings across projects.
+- [Corridor Guardrails API](https://apis.io/apis/corridor/corridor-guardrails-api/) — Manage per-project security guardrails (reports) and packs.
+- [Corridor PR Reviews API](https://apis.io/apis/corridor/corridor-pr-reviews-api/) — Access pull request review results and AI analysis.
+- [Corridor Projects API](https://apis.io/apis/corridor/corridor-projects-api/) — List and inspect projects (connected repositories).
+- [Corridor Teams API](https://apis.io/apis/corridor/corridor-teams-api/) — Manage team configuration, members, and permissions.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [corridor](https://apis.io/servers/corridor/corridor/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Corridor Agentic Access](https://apis.io/agentic-access/corridor/corridor-agentic-access/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Corridor Dashboard API](https://apis.io/collections/corridor/open-corridor-dashboard-api/)
+- [Corridor Dashboard Findings API](https://apis.io/collections/corridor/open-corridor-findings-api/)
+- [Corridor Dashboard Guardrails API](https://apis.io/collections/corridor/open-corridor-guardrails-api/)
+- [Corridor Dashboard Projects API](https://apis.io/collections/corridor/open-corridor-projects-api/)
+- [Corridor Dashboard Teams API](https://apis.io/collections/corridor/open-corridor-teams-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Corridor Openapi Overlay](https://apis.io/overlays/corridor/corridor-openapi-overlay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Corridor Authentication](https://apis.io/security/corridor/corridor-authentication/)
+- [Corridor Domain Security](https://apis.io/security/corridor/corridor-domain-security/)
+- [Corridor Trust Center](https://apis.io/security/corridor/corridor-trust-center/)
+- [Corridor Vulnerability Disclosure](https://apis.io/security/corridor/corridor-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://corridor.dev)
+- [Documentation](https://docs.corridor.dev)
+- [Getting started](https://docs.corridor.dev/getting-started/quickstart)
+- [API reference](https://docs.corridor.dev/api/reference)
+- [Pricing](https://corridor.dev/pricing)
+- [Sign up](https://app.corridor.dev)
+- [Changelog](https://docs.corridor.dev/changelog)
+- [Blog](https://corridor.dev/blog)
+- [Security](https://corridor.dev/security)
+- [Trust centre](https://trust.corridor.dev)
+- [Terms of service](https://corridor.dev/terms)
+- [Privacy policy](https://corridor.dev/privacy)
+- [Status](https://status.corridor.dev)
+
+## API Evangelist rating
+
+**Kin Score 35.9** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 13.4 |
+| Contract governance | 4.5 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 66.1 |
+| Access clarity | 31.6 |
+
+**Agent readiness 23.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 30.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/corridor/](https://apis.io/providers/corridor/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Corridor: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/corridor/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
